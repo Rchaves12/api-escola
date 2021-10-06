@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  web:
+    hostname: web_django
+    container_name: web_django
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8001:8000"
+    env_file:
+      - ./.env
