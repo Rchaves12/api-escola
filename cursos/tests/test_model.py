@@ -5,18 +5,17 @@ from cursos.models import Curso, Avaliacao
 # This is the class we want to test. So, we need to import it
 
 
-class CursoCreate(object):
-    def create(self):
-        Curso.objects.create(titulo='teste',
-                             url='teste.com.br'
-                             )
+def CursoCreate(self):
+    Curso.objects.create(titulo='teste',
+                         url='teste.com.br'
+                         )
 
 
 class CursoTestCase(TestCase):
 
     @classmethod
-    def setUp(self):
-        CursoCreate.create(self)
+    def setUp(cls):
+        CursoCreate(cls)
 
     def test_first_name_label(self):
         curso = Curso.objects.get(id=1)
@@ -31,8 +30,8 @@ class CursoTestCase(TestCase):
 class AvaliacaoTestCase(TestCase):
 
     @classmethod
-    def setUp(self):
-        CursoCreate.create(self)
+    def setUp(cls):
+        CursoCreate(cls)
         curso = Curso.objects.get(id=1)
         Avaliacao.objects.create(curso=curso,
                                  nome='curso',
