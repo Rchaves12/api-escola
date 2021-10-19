@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Curso, Avalizacao
+from .models import Curso, Avaliacao
 
 
 class AvaliacaoSerializer(serializers.ModelSerializer):
@@ -9,7 +9,7 @@ class AvaliacaoSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'email': {'write_only': True}
         }
-        model = Avalizacao
+        model = Avaliacao
         fields = (
             'id',
             'curso',
