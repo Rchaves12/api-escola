@@ -4,11 +4,21 @@ from .models import Curso, Avaliacao
 from .serializers import CursoSerializer, AvaliacaoSerializer
 
 
-class CursoAPIView(generics.ListAPIView):
+class CursosAPIView(generics.ListAPIView):
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
 
 
-class AvaliacaoAPIView(generics.ListAPIView):
+class CursoAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Curso.objects.all()
+    serializer_class = CursoSerializer
+
+
+class AvaliacoesAPIView(generics.ListAPIView):
+    queryset = Avaliacao.objects.all()
+    serializer_class = AvaliacaoSerializer
+
+
+class AvaliacaoAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Avaliacao.objects.all()
     serializer_class = AvaliacaoSerializer
