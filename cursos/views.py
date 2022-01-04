@@ -76,7 +76,7 @@ class CursoViewSet(viewsets.ModelViewSet):
 
 
 class AvaliazaoViewSet(
-    # mixins.ListModelMixin,
+    mixins.ListModelMixin,
     mixins.CreateModelMixin,
     mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin,
